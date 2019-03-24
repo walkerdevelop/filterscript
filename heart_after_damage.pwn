@@ -1,16 +1,16 @@
-#include a_samp 
+#include a_samp
 
 forward CheckPlayer(playerid);
 
 new PlayerHeart[MAX_PLAYERS];
 
 public OnPlayerConnect(playerid) {
-	return SendClientMessage(playerid, -1, "Автор скрипта: vk.com/walkerscript (#Walker)");
+	return SendClientMessage(playerid, -1, "Author: vk.com/walkerscript (#Walker)");
 }
 public OnPlayerDisconnect(playerid, reason) {
 	if(GetPVarInt(playerid, "Heart") == 1) DestroyObject(PlayerHeart[playerid]);
 	SetPVarInt(playerid, "Heart", 0);
-	return SendClientMessage(playerid, -1, "Я люблю маенкрафт");
+	return SendClientMessage(playerid, -1, "I love minecraft!");
 }
 public OnPlayerTakeDamage(playerid, issuerid, Float:amount, weaponid, bodypart) {
 	//if(issuerid == INVALID_PLAYER_ID) return 0;
